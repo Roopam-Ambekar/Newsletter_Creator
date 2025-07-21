@@ -194,7 +194,7 @@ Please ensure your Excel file contains the following columns in **this exact ord
 📌 **Note:** Keep column headers exactly as shown, and ensure there's no extra spacing or typos.
 """)
 
-st.image("https://github.com/Roopam-Ambekar/Newsletter_Creator/blob/main/Example%20arrangement.jpg", caption="📄 Example of Correct Excel Format", use_container_width=True)
+st.image("https://github.com/Roopam-Ambekar/Newsletter_Creator/blob/main/Example%20arrangement.jpg?raw=true", caption="📄 Example of Correct Excel Format", use_container_width=True)
 
 uploaded_file = st.file_uploader("Step 1: Upload your Excel file", type=["xlsx"])
 custom_name = st.text_input("Step 2: Enter name for the Word file (without .docx):", "Newsletter_Final")
