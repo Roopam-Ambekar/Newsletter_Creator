@@ -184,12 +184,12 @@ Please ensure your Excel file contains the following columns in **this exact ord
 | `S. No`     | Serial number (optional, not used in processing) |
 | `Supplier`  | Name of the supplier (e.g., Cognizant) |
 | `Category`  | Category of News(e.g. Service Offerings, Earnings) |
-| `Shared`    | If teh news was sent to the supplier as an alert (Y for Yes/ N for No) |
-| `Date`      | Date of the news (e.g., 2025-07-20) |
+| `Shared`    | If the news alert was sent to the supplier as an alert (Y for Yes/ N for No) |
+| `Date`      | Date of the news (e.g., July 2, 2025) |
 | `Headline`  | Headline of the news piece|
 | `Summary`   | Summary of the news piece |
-| `Source 1`  | URL to the full article (optional) |
-| `Source 2`  | Additional source (optional) |
+| `Source 1`  | URL to the full article |
+| `Source 2`  | Additional source |, Source 3, Source 4....
 
 📌 **Note:** Keep column headers exactly as shown, and ensure there's no extra spacing or typos.
 """)
