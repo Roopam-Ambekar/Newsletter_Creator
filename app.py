@@ -173,6 +173,29 @@ def process_excel_and_create_word(uploaded_file, custom_name):
 # --- Streamlit UI ---
 st.title("📊 Excel to Word Newsletter Generator")
 
+# 💡 Instructions
+st.markdown("""
+### 🧾 Excel File Format Instructions
+
+Please ensure your Excel file contains the following columns in **this exact order**:
+
+| Column Name | Description |
+|-------------|-------------|
+| `S. No`     | Serial number (optional, not used in processing) |
+| `Supplier`  | Name of the supplier (e.g., Cognizant) |
+| `Category`  | Category of News(e.g. Service Offerings, Earnings) |
+| `Shared`    | If teh news was sent to the supplier as an alert (Y for Yes/ N for No) |
+| `Date`      | Date of the news (e.g., 2025-07-20) |
+| `Headline`  | Headline of the news piece|
+| `Summary`   | Summary of the news piece |
+| `Source 1`  | URL to the full article (optional) |
+| `Source 2`  | Additional source (optional) |
+
+📌 **Note:** Keep column headers exactly as shown, and ensure there's no extra spacing or typos.
+""")
+
+st.image("https://github.com/Roopam-Ambekar/Newsletter_Creator/blob/main/Example%20arrangement.jpg", caption="📄 Example of Correct Excel Format", use_column_width=True)
+
 uploaded_file = st.file_uploader("Step 1: Upload your Excel file", type=["xlsx"])
 custom_name = st.text_input("Step 2: Enter name for the Word file (without .docx):", "Newsletter_Final")
 
