@@ -171,7 +171,7 @@ def process_excel_and_create_word(uploaded_file, custom_name):
     return output
 
 # --- Streamlit UI ---
-st.title("📊 Excel to Word Newsletter Generator")
+st.title("📊 ComputerShare Supplier Newsletter Creator")
 
 # 💡 Instructions
 st.markdown("""
@@ -184,7 +184,7 @@ Please ensure your Excel file contains the following columns in **this exact ord
 | `S. No`     | Serial number (optional, not used in processing) |
 | `Supplier`  | Name of the supplier (e.g., Cognizant) |
 | `Category`  | Category of News(e.g. Service Offerings, Earnings) |
-| `Shared`    | If the news alert was sent to the supplier as an alert (Y for Yes/ N for No) |
+| `Shared`    | If the news was sent to the supplier as an alert (Y for Yes/ N for No) |
 | `Date`      | Date of the news (e.g., July 2, 2025) |
 | `Headline`  | Headline of the news piece|
 | `Summary`   | Summary of the news piece |
