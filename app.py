@@ -68,7 +68,7 @@ def add_hyperlink(paragraph, url, text):
 
 # Main logic function
 def process_excel_and_create_word(df, custom_name):
-    df_newssheet = pd.read_excel(df)
+    df_newssheet = df.copy()
     doc = Document()
 
     # --- Set Moderate Margins ---
