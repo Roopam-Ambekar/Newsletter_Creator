@@ -196,8 +196,13 @@ Please ensure your Excel file contains the following columns in **this exact ord
 
 st.image("https://github.com/Roopam-Ambekar/Newsletter_Creator/blob/main/Example%20arrangement.jpg?raw=true", caption="📄 Example of Correct Excel Format", width = 1000)
 
-uploaded_file = st.file_uploader("Step 1: Upload your Excel file", type=["xlsx"])
-custom_name = st.text_input("Step 2: Enter name for the Word file (without .docx):", "Enter the name of your file.")
+# Option selector
+option = st.radio(
+    "Choose input method:",
+    ("📂 Upload Excel File", "🌐 Use Google Sheet")
+)
+
+custom_name = st.text_input("Enter name for the Word file (without .docx):", "Newsletter_Final")
 
 df = None
 
