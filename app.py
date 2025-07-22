@@ -182,14 +182,14 @@ Please ensure your Excel file contains the following columns in **this exact ord
 | Column Name | Description |
 |-------------|-------------|
 | `S. No`     | Serial number (optional, not used in processing) |
-| `Supplier`  | Name of the supplier (e.g., Cognizant) |
-| `Category`  | Category of News(e.g. Service Offerings, Earnings) |
+| `Supplier`  | Name of the supplier (e.g., Cognizant, Coinbase...) |
+| `Category`  | Category of News(e.g. Service Offering, Earnings, Strategic Partnership...) |
 | `Shared`    | If the news was sent to the supplier as an alert (Y for Yes/ N for No) |
 | `Date`      | Date of the news (e.g., July 2, 2025) |
 | `Headline`  | Headline of the news piece|
 | `Summary`   | Summary of the news piece |
 | `Source 1`  | URL to the full article |
-| `Source 2`  | Additional source |, Source 3, Source 4....
+| `Source 2`  | Additional source |
 
 📌 **Note:** Keep column headers exactly as shown, and ensure there's no extra spacing or typos.
 """)
@@ -202,7 +202,7 @@ option = st.radio(
     ("📂 Upload Excel File", "🌐 Use Google Sheet")
 )
 
-custom_name = st.text_input("Enter name for the Word file (without .docx):", "Newsletter_Final")
+custom_name = st.text_input("Enter name for the Word file (without .docx):", "Enter the Name")
 
 df = None
 
