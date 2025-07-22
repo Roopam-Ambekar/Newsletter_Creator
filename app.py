@@ -175,7 +175,7 @@ st.title("📊 ComputerShare Supplier Newsletter Creator")
 
 # 💡 Instructions
 st.markdown("""
-### 🧾 Excel File Format Instructions
+### 🧾 News Sheet File Format Instructions
 
 Please ensure your Excel file contains the following columns in **this exact order**:
 
