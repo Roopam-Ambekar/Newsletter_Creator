@@ -67,8 +67,8 @@ def add_hyperlink(paragraph, url, text):
     paragraph._p.append(hyperlink)
 
 # Main logic function
-def process_excel_and_create_word(uploaded_file, custom_name):
-    df_newssheet = pd.read_excel(uploaded_file)
+def process_excel_and_create_word(df, custom_name):
+    df_newssheet = pd.read_excel(df)
     doc = Document()
 
     # --- Set Moderate Margins ---
@@ -197,11 +197,27 @@ Please ensure your Excel file contains the following columns in **this exact ord
 st.image("https://github.com/Roopam-Ambekar/Newsletter_Creator/blob/main/Example%20arrangement.jpg?raw=true", caption="📄 Example of Correct Excel Format", width = 1000)
 
 uploaded_file = st.file_uploader("Step 1: Upload your Excel file", type=["xlsx"])
-custom_name = st.text_input("Step 2: Enter name for the Word file (without .docx):", "Newsletter_Final")
+custom_name = st.text_input("Step 2: Enter name for the Word file (without .docx):", "Enter the name of your file.")
 
-if uploaded_file and custom_name.strip():
+df = None
+
+if option == "📂 Upload Excel File":
+    uploaded_file = st.file_uploader("Upload your Excel file", type=["xlsx"])
+    if uploaded_file:
+        df = pd.read_excel(uploaded_file)
+
+elif option == "🌐 Use Google Sheet":
+    st.info("Using data from linked Google Sheet.")
+    # Replace with your actual Sheet URL
+    sheet_url = "https://docs.google.com/spreadsheets/d/1aErka1fqYFGctlOuXYcjHgfnw9lXMElb7UHqEjh1SWo/export?format=csv"
+    try:
+        df = pd.read_csv(sheet_url)
+    except Exception as e:
+        st.error(f"Failed to read Google Sheet: {e}")
+
+if df is not None and custom_name.strip():
     if st.button("🚀 Generate Word Document"):
-        word_output = process_excel_and_create_word(uploaded_file, custom_name)
+        word_output = process_excel_and_create_word(df, custom_name)
         st.success("✅ Word document generated successfully!")
 
         st.download_button(
